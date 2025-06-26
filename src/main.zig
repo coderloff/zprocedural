@@ -1,14 +1,16 @@
 const std = @import("std");
 
-const pathGenerator = @import("procedural-generation/pathGenerator.zig");
-
-var gpa = std.heap.GeneralPurposeAllocator(.{}){};
-const allocator = gpa.allocator();
+const PathGenerator = @import("procedural-generation/path_generator.zig").PathGenerator;
 
 pub fn main() !void {
+    var gpa = std.heap.GeneralPurposeAllocator(.{}){};
     defer _ = gpa.deinit();
+    const allocator = gpa.allocator();
 
-    pathGenerator.generatePath(allocator, 10, 10) catch |err| {
+    var generator = PathGenerator.init(allocator);
+    defer generator.deinit();
+
+    generator.generate_path(10, 10) catch |err| {
         std.debug.print("Error generating path: {}\n", .{err});
     };
 }

@@ -1,1 +1,1 @@
-pub const Element = enum { None, Section, Joint };
+pub const Element = enum { none, section, joint };

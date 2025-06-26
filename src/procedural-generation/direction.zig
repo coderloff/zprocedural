@@ -1,1 +1,1 @@
-pub const Direction = enum { Up, Right, Down, Left };
+pub const Direction = enum { up, right, down, left };

@@ -1,5 +1,5 @@
 pub const State = enum {
-    Failed,
-    Success,
-    InProgress,
+    failed,
+    success,
+    in_progress,
 };

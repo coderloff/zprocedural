@@ -1,0 +1,17 @@
+.{
+    .name = .zprocedural,
+
+    .version = "0.0.1",
+
+    .fingerprint = 0xeb7ee55e8841288b, // Changing this has security and trust implications.
+
+    .minimum_zig_version = "0.14.1",
+
+    .dependencies = .{},
+
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
